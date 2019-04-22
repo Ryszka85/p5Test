@@ -1,6 +1,8 @@
 let mousePos,ballPos,velocity,acceleration;
 const canvasWidth = 1265;
 const canvasHeight = 648;
+const diameter = 80;
+const magnitude = 0.5;
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
     velocity = new Vector(0,0);
@@ -21,9 +23,9 @@ function setup() {
     // with dynamic speed
     mousePos.sub(ballPos.x,ballPos.y);
 
-    // setting magnitude of that vector to 0,1
-    // for to lower the force(acceleration)
-    mousePos.setMag(0.1);
+    // setting magnitude of that vector to a choosen value
+    // to decrease or increase the force(acceleration)
+    mousePos.setMag(magnitude);
 
     // assigning the (x,y) acceleration object
     // with the vector magnitude(length)
@@ -37,14 +39,18 @@ function setup() {
     // to move the ball in mouse cursor´s direction
     ballPos.add(velocity.x,velocity.y);
 
-    // draw the ball
-    ellipse(ballPos.x, ballPos.y, 80, 80);
-
-    // checking if velocity is not to high
+// checking if velocity is not to high
     if(velocity.x >= 5 || velocity.y >= 5){
-        velocity.x *= 0.75;
-        velocity.y *= 0.75;
+      velocity.x *= 0.75;
+      velocity.y *= 0.75;
     }
+    
+    ballPos.x + 60 >= width || ballPos.x - 40 <= 0 ? velocity.x *= -1 : velocity.x *= 1;
+    ballPos.y + 60 >= height || ballPos.y - 40 <= 0 ? velocity.y *= -1 : velocity.y *= 1;
+    // draw the ball
+    ellipse(ballPos.x , ballPos.y, diameter, diameter);
+
+    
     
 }
 
