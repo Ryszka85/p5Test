@@ -2,7 +2,7 @@ let mousePos,ballPos,velocity,acceleration;
 
 function setup() {
     createCanvas(1265, 648);
-    vel = new Vector(0,0);
+    velocity = new Vector(0,0);
     ballPos =  new Vector(width/2,height/2);
     acceleration = new Vector(0,0);
   }
@@ -25,7 +25,7 @@ function setup() {
     mousePos.setMag(0.1);
 
     // assigning the (x,y) acceleration object
-    // with the vector magnitude(length).
+    // with the vector magnitude(length)
     acceleration.x = mousePos.x;
     acceleration.y = mousePos.y;
 
