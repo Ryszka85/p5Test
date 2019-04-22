@@ -45,8 +45,8 @@ function setup() {
       velocity.y *= 0.75;
     }
     
-    ballPos.x + 60 >= width || ballPos.x - 40 <= 0 ? velocity.x *= -1 : velocity.x *= 1;
-    ballPos.y + 60 >= height || ballPos.y - 40 <= 0 ? velocity.y *= -1 : velocity.y *= 1;
+    ballPos.x + 60 >= width || ballPos.x - 40 <= 0 ? velocity.x *= -0.5 : velocity.x *= 1;
+    ballPos.y + 60 >= height || ballPos.y - 40 <= 0 ? velocity.y *= -0.5 : velocity.y *= 1;
     // draw the ball
     ellipse(ballPos.x , ballPos.y, diameter, diameter);
 
