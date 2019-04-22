@@ -2,7 +2,7 @@ let mousePos,ballPos,velocity,acceleration;
 const canvasWidth = 1265;
 const canvasHeight = 648;
 const diameter = 80;
-const magnitude = 0.09;
+const magnitude = 0.1;
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
     velocity = new Vector(0,0);
