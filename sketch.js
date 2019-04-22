@@ -1,23 +1,24 @@
-let mouse,test,vel,acc;
+
+let mouse,ballPos,vel,acc;
 
 function setup() {
     createCanvas(1265, 648);
     vel = new Vector(0,0);
-test =  new Vector(width/2,height/2);
-acc = new Vector(0,0);
+    ballPos =  new Vector(width/2,height/2);
+    acc = new Vector(0,0);
   }
   
   function draw() {
     background(55);
     mouse = new Vector(mouseX,mouseY);
-    mouse.sub(test.x,test.y);
+    mouse.sub(ballPos.x,ballPos.y);
     mouse.setMag(0.1);
 
     acc.x = mouse.x;
     acc.y = mouse.y;
     vel.add(acc.x,acc.y);
-    test.add(vel.x,vel.y);
-    ellipse(test.x, test.y, 80, 80);
+    ballPos.add(vel.x,vel.y);
+    ellipse(ballPos.x, ballPos.y, 80, 80);
     if(vel.x >= 5 || vel.y >= 5){
         vel.x *= 0.75;
         vel.y *= 0.75;
