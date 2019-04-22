@@ -26,7 +26,7 @@ class Vector {
           unitY : this.y / this.mag()
       };
   }
-  // setMag() method sets the magnitude(length) of a vector
+  // setMag() method sets the magnitude(length) of a vector (x,y)
   setMag(n){
       this.x = this.unit().unitX * n;
       this.y = this.unit().unitY * n;
